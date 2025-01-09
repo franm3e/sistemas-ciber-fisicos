@@ -1,0 +1,456 @@
+[
+    {
+        "id": "19ff25f38fc9657b",
+        "type": "tab",
+        "label": "MQTT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d6b6453bf301d7cd",
+        "type": "tab",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9b8af3ac0e4f0d38",
+        "type": "mqtt-broker",
+        "name": "Mosquitto",
+        "broker": "127.0.0.1",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "4af01aa38eb93315",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#005b80",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#005b80",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0091cc",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#005b80",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Huerto hidropónico",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "4396f09bc79474bf",
+        "type": "ui_tab",
+        "name": "Panel de control",
+        "icon": "",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b62892c4ecd8272e",
+        "type": "ui_group",
+        "name": "Automatización de riego",
+        "tab": "4396f09bc79474bf",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e6310b521c292bb5",
+        "type": "ui_group",
+        "name": "Monitorización temperatura ",
+        "tab": "4396f09bc79474bf",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "239808a826673604",
+        "type": "mqtt in",
+        "z": "19ff25f38fc9657b",
+        "name": "",
+        "topic": "riego.estado",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9b8af3ac0e4f0d38",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 120,
+        "wires": [
+            [
+                "c182fd29e499e3ec"
+            ]
+        ]
+    },
+    {
+        "id": "3bec346b89221b03",
+        "type": "mqtt out",
+        "z": "19ff25f38fc9657b",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9b8af3ac0e4f0d38",
+        "x": 610,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "541f523ada7e5405",
+        "type": "inject",
+        "z": "19ff25f38fc9657b",
+        "name": "timestamp",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "riego.estado",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 200,
+        "y": 280,
+        "wires": [
+            [
+                "3bec346b89221b03"
+            ]
+        ]
+    },
+    {
+        "id": "c182fd29e499e3ec",
+        "type": "ui_switch",
+        "z": "19ff25f38fc9657b",
+        "name": "Switch Riego",
+        "label": "Estado:",
+        "tooltip": "",
+        "group": "b62892c4ecd8272e",
+        "order": 1,
+        "width": "4",
+        "height": "1",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 610,
+        "y": 120,
+        "wires": [
+            [
+                "0bf09ec76232b114"
+            ]
+        ]
+    },
+    {
+        "id": "0bf09ec76232b114",
+        "type": "ui_led2",
+        "z": "19ff25f38fc9657b",
+        "order": 3,
+        "group": "b62892c4ecd8272e",
+        "width": "2",
+        "height": "1",
+        "label": "",
+        "property": "payload",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": false,
+        "name": "Led Riego",
+        "x": 990,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "a4fdb5a5.dd1ee8",
+        "type": "function",
+        "z": "19ff25f38fc9657b",
+        "name": "generator",
+        "func": "msg.payload = Math.round((Math.random() * (40 - 0) + 0) * 100) / 100\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 420,
+        "wires": [
+            [
+                "050b7efc4601bbb5",
+                "7a619247f340f57c"
+            ]
+        ]
+    },
+    {
+        "id": "08423a15991749ab",
+        "type": "inject",
+        "z": "19ff25f38fc9657b",
+        "name": "",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            },
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "3",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "Temperatura",
+        "payload": "",
+        "payloadType": "num",
+        "x": 220,
+        "y": 420,
+        "wires": [
+            [
+                "a4fdb5a5.dd1ee8"
+            ]
+        ]
+    },
+    {
+        "id": "050b7efc4601bbb5",
+        "type": "ui_chart",
+        "z": "19ff25f38fc9657b",
+        "name": "",
+        "group": "e6310b521c292bb5",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Temperatura",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 870,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3b6f167182a225c5",
+        "type": "ui_button",
+        "z": "19ff25f38fc9657b",
+        "name": "",
+        "group": "e6310b521c292bb5",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "passthru": false,
+        "label": "Actualizar",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "[]",
+        "payloadType": "json",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 600,
+        "y": 500,
+        "wires": [
+            [
+                "050b7efc4601bbb5"
+            ]
+        ]
+    },
+    {
+        "id": "7a619247f340f57c",
+        "type": "ui_text",
+        "z": "19ff25f38fc9657b",
+        "group": "e6310b521c292bb5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Temperatura actual:",
+        "format": "{{msg.payload}}º",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 920,
+        "y": 500,
+        "wires": []
+    }
+]
