@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "nanopb.proto"; // Importa las opciones de Nanopb
+
+message AlertValue {
+  string name = 1 [(nanopb).max_length = 64]; // Longitud máxima de 64 caracteres
+  string value = 2; // Valor de la alerta
+}
+

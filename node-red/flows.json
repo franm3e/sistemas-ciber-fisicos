@@ -1,29 +1,29 @@
 [
     {
-        "id": "19ff25f38fc9657b",
+        "id": "78481d8b01b4b912",
         "type": "tab",
-        "label": "MQTT",
+        "label": "Flow 1",
         "disabled": false,
         "info": "",
         "env": []
     },
     {
-        "id": "d6b6453bf301d7cd",
+        "id": "905ab66c4289edd4",
         "type": "tab",
-        "label": "Dashboard",
+        "label": "Huerto Hidropónico",
         "disabled": false,
-        "info": "",
-        "env": []
+        "info": ""
     },
     {
         "id": "9b8af3ac0e4f0d38",
         "type": "mqtt-broker",
-        "name": "Mosquitto",
-        "broker": "127.0.0.1",
-        "port": 1883,
+        "name": "HiveMQ",
+        "broker": "",
+        "port": "8883",
+        "tls": "",
         "clientid": "",
         "autoConnect": true,
-        "usetls": false,
+        "usetls": true,
         "protocolVersion": 4,
         "keepalive": 60,
         "cleansession": true,
@@ -50,7 +50,7 @@
         "id": "4af01aa38eb93315",
         "type": "ui_base",
         "theme": {
-            "name": "theme-light",
+            "name": "theme-dark",
             "lightTheme": {
                 "default": "#0094CE",
                 "baseColor": "#005b80",
@@ -62,7 +62,7 @@
                 "default": "#097479",
                 "baseColor": "#097479",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false,
+                "edited": true,
                 "reset": false
             },
             "customTheme": {
@@ -74,16 +74,16 @@
             },
             "themeState": {
                 "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
+                    "default": "#097479",
+                    "value": "#097479",
                     "edited": false
                 },
                 "page-titlebar-backgroundColor": {
-                    "value": "#005b80",
+                    "value": "#097479",
                     "edited": false
                 },
                 "page-backgroundColor": {
-                    "value": "#fafafa",
+                    "value": "#111111",
                     "edited": false
                 },
                 "page-sidebar-backgroundColor": {
@@ -91,27 +91,27 @@
                     "edited": false
                 },
                 "group-textColor": {
-                    "value": "#0091cc",
+                    "value": "#0eb8c0",
                     "edited": false
                 },
                 "group-borderColor": {
-                    "value": "#ffffff",
+                    "value": "#555555",
                     "edited": false
                 },
                 "group-backgroundColor": {
-                    "value": "#ffffff",
+                    "value": "#333333",
                     "edited": false
                 },
                 "widget-textColor": {
-                    "value": "#111111",
+                    "value": "#eeeeee",
                     "edited": false
                 },
                 "widget-backgroundColor": {
-                    "value": "#005b80",
+                    "value": "#097479",
                     "edited": false
                 },
                 "widget-borderColor": {
-                    "value": "#ffffff",
+                    "value": "#333333",
                     "edited": false
                 },
                 "base-font": {
@@ -146,236 +146,118 @@
         }
     },
     {
-        "id": "4396f09bc79474bf",
+        "id": "444821c220e0e47e",
         "type": "ui_tab",
-        "name": "Panel de control",
-        "icon": "",
-        "order": 1,
+        "name": "Dashboard de monitorización de Hidroponía",
+        "icon": "dashboard",
         "disabled": false,
         "hidden": false
     },
     {
-        "id": "b62892c4ecd8272e",
+        "id": "aaa9ea9f75c3b3af",
+        "type": "protobuf-file",
+        "protopath": "C:\\Users\\souha\\OneDrive\\Escritorio\\sensor_data.proto",
+        "watchFile": true,
+        "keepCase": false
+    },
+    {
+        "id": "cae46c049fe431f4",
         "type": "ui_group",
-        "name": "Automatización de riego",
-        "tab": "4396f09bc79474bf",
-        "order": 1,
+        "name": "Temperatura",
+        "tab": "444821c220e0e47e",
+        "order": 4,
         "disp": true,
         "width": 6,
-        "collapse": false,
+        "collapse": true,
         "className": ""
     },
     {
-        "id": "e6310b521c292bb5",
+        "id": "d142bcd28ba111d5",
         "type": "ui_group",
-        "name": "Monitorización temperatura ",
-        "tab": "4396f09bc79474bf",
+        "name": "Humedad",
+        "tab": "444821c220e0e47e",
+        "order": 5,
+        "disp": true,
+        "width": 6,
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "dashboard_group",
+        "type": "ui_group",
+        "name": "Alertas",
+        "tab": "444821c220e0e47e",
         "order": 2,
         "disp": true,
+        "width": "6",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "6d6cf12effc81bc1",
+        "type": "protobuf-file",
+        "protopath": "C:\\Users\\souha\\OneDrive\\Escritorio\\alert_data.proto",
+        "watchFile": true,
+        "keepCase": false
+    },
+    {
+        "id": "c0aa90c82d48158d",
+        "type": "ui_group",
+        "name": "Panel de control",
+        "tab": "444821c220e0e47e",
+        "order": 3,
+        "disp": true,
         "width": 6,
         "collapse": false,
         "className": ""
     },
     {
-        "id": "239808a826673604",
+        "id": "5508ecf706c087d0",
+        "type": "ui_spacer",
+        "z": "905ab66c4289edd4",
+        "name": "spacer",
+        "group": "c0aa90c82d48158d",
+        "order": 4,
+        "width": "1",
+        "height": "1"
+    },
+    {
+        "id": "e41b68bfb9340175",
         "type": "mqtt in",
-        "z": "19ff25f38fc9657b",
-        "name": "",
-        "topic": "riego.estado",
+        "z": "905ab66c4289edd4",
+        "name": "Temperatura",
+        "topic": "IoTHydroponic/temperature",
         "qos": "2",
         "datatype": "auto-detect",
         "broker": "9b8af3ac0e4f0d38",
         "nl": false,
-        "rap": true,
+        "rap": false,
         "rh": 0,
         "inputs": 0,
-        "x": 230,
-        "y": 120,
+        "x": 90,
+        "y": 60,
         "wires": [
             [
-                "c182fd29e499e3ec"
+                "355ffd65d4915395"
             ]
         ]
     },
     {
-        "id": "3bec346b89221b03",
-        "type": "mqtt out",
-        "z": "19ff25f38fc9657b",
-        "name": "",
-        "topic": "",
-        "qos": "",
-        "retain": "",
-        "respTopic": "",
-        "contentType": "",
-        "userProps": "",
-        "correl": "",
-        "expiry": "",
-        "broker": "9b8af3ac0e4f0d38",
-        "x": 610,
-        "y": 280,
-        "wires": []
-    },
-    {
-        "id": "541f523ada7e5405",
-        "type": "inject",
-        "z": "19ff25f38fc9657b",
-        "name": "timestamp",
-        "props": [
-            {
-                "p": "payload"
-            },
-            {
-                "p": "topic",
-                "vt": "str"
-            }
-        ],
-        "repeat": "",
-        "crontab": "",
-        "once": false,
-        "onceDelay": 0.1,
-        "topic": "riego.estado",
-        "payload": "true",
-        "payloadType": "bool",
-        "x": 200,
-        "y": 280,
-        "wires": [
-            [
-                "3bec346b89221b03"
-            ]
-        ]
-    },
-    {
-        "id": "c182fd29e499e3ec",
-        "type": "ui_switch",
-        "z": "19ff25f38fc9657b",
-        "name": "Switch Riego",
-        "label": "Estado:",
-        "tooltip": "",
-        "group": "b62892c4ecd8272e",
-        "order": 1,
-        "width": "4",
-        "height": "1",
-        "passthru": true,
-        "decouple": "false",
-        "topic": "topic",
-        "topicType": "msg",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "animate": false,
-        "className": "",
-        "x": 610,
-        "y": 120,
-        "wires": [
-            [
-                "0bf09ec76232b114"
-            ]
-        ]
-    },
-    {
-        "id": "0bf09ec76232b114",
-        "type": "ui_led2",
-        "z": "19ff25f38fc9657b",
-        "order": 3,
-        "group": "b62892c4ecd8272e",
-        "width": "2",
-        "height": "1",
-        "label": "",
-        "property": "payload",
-        "labelPlacement": "left",
-        "labelAlignment": "left",
-        "colorForValue": [
-            {
-                "color": "#ff0000",
-                "value": "false",
-                "valueType": "bool"
-            },
-            {
-                "color": "#008000",
-                "value": "true",
-                "valueType": "bool"
-            }
-        ],
-        "allowColorForValueInMessage": false,
-        "shape": "circle",
-        "showGlow": false,
-        "name": "Led Riego",
-        "x": 990,
-        "y": 120,
-        "wires": []
-    },
-    {
-        "id": "a4fdb5a5.dd1ee8",
-        "type": "function",
-        "z": "19ff25f38fc9657b",
-        "name": "generator",
-        "func": "msg.payload = Math.round((Math.random() * (40 - 0) + 0) * 100) / 100\nreturn msg;",
-        "outputs": 1,
-        "timeout": "",
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 580,
-        "y": 420,
-        "wires": [
-            [
-                "050b7efc4601bbb5",
-                "7a619247f340f57c"
-            ]
-        ]
-    },
-    {
-        "id": "08423a15991749ab",
-        "type": "inject",
-        "z": "19ff25f38fc9657b",
-        "name": "",
-        "props": [
-            {
-                "p": "topic",
-                "vt": "str"
-            },
-            {
-                "p": "payload"
-            }
-        ],
-        "repeat": "3",
-        "crontab": "",
-        "once": true,
-        "onceDelay": 0.1,
-        "topic": "Temperatura",
-        "payload": "",
-        "payloadType": "num",
-        "x": 220,
-        "y": 420,
-        "wires": [
-            [
-                "a4fdb5a5.dd1ee8"
-            ]
-        ]
-    },
-    {
-        "id": "050b7efc4601bbb5",
+        "id": "dcdc61c51eb4edc5",
         "type": "ui_chart",
-        "z": "19ff25f38fc9657b",
-        "name": "",
-        "group": "e6310b521c292bb5",
-        "order": 0,
+        "z": "905ab66c4289edd4",
+        "name": "Historial Temperatura",
+        "group": "cae46c049fe431f4",
+        "order": 2,
         "width": 0,
         "height": 0,
-        "label": "Temperatura",
+        "label": "Historial",
         "chartType": "line",
         "legend": "true",
         "xformat": "HH:mm:ss",
         "interpolate": "linear",
-        "nodata": "",
-        "dot": false,
+        "nodata": "Sin datos",
+        "dot": true,
         "ymin": "",
         "ymax": "",
         "removeOlder": 1,
@@ -398,59 +280,664 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 870,
-        "y": 420,
+        "x": 800,
+        "y": 40,
         "wires": [
             []
         ]
     },
     {
-        "id": "3b6f167182a225c5",
-        "type": "ui_button",
-        "z": "19ff25f38fc9657b",
-        "name": "",
-        "group": "e6310b521c292bb5",
-        "order": 1,
-        "width": "0",
-        "height": "0",
-        "passthru": false,
-        "label": "Actualizar",
-        "tooltip": "",
-        "color": "",
-        "bgcolor": "",
-        "className": "",
-        "icon": "",
-        "payload": "[]",
-        "payloadType": "json",
-        "topic": "topic",
-        "topicType": "msg",
-        "x": 600,
-        "y": 500,
+        "id": "c29cab89fd7de41b",
+        "type": "mqtt in",
+        "z": "905ab66c4289edd4",
+        "name": "Humedad",
+        "topic": "IoTHydroponic/humidity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9b8af3ac0e4f0d38",
+        "nl": false,
+        "rap": false,
+        "rh": 0,
+        "inputs": 0,
+        "x": 80,
+        "y": 160,
         "wires": [
             [
-                "050b7efc4601bbb5"
+                "9ce047025a1d5360"
             ]
         ]
     },
     {
-        "id": "7a619247f340f57c",
+        "id": "4aaad2e174311eb6",
         "type": "ui_text",
-        "z": "19ff25f38fc9657b",
-        "group": "e6310b521c292bb5",
-        "order": 2,
+        "z": "905ab66c4289edd4",
+        "group": "d142bcd28ba111d5",
+        "order": 1,
         "width": 0,
         "height": 0,
-        "name": "",
-        "label": "Temperatura actual:",
-        "format": "{{msg.payload}}º",
+        "name": "Humedad Actual",
+        "label": "Humedad actual (%):  ",
+        "format": "{{msg.payload.value}} %",
         "layout": "row-spread",
         "className": "",
         "style": false,
         "font": "",
-        "fontSize": 16,
+        "fontSize": "",
         "color": "#000000",
-        "x": 920,
-        "y": 500,
+        "x": 710,
+        "y": 160,
         "wires": []
+    },
+    {
+        "id": "8e9bc29ac7d4f047",
+        "type": "mqtt in",
+        "z": "905ab66c4289edd4",
+        "name": "Altura",
+        "topic": "IoTHydroponic/height",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9b8af3ac0e4f0d38",
+        "nl": false,
+        "rap": false,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 260,
+        "wires": [
+            [
+                "599fdb0dca432fc4"
+            ]
+        ]
+    },
+    {
+        "id": "0c7357702bd4a819",
+        "type": "ui_text",
+        "z": "905ab66c4289edd4",
+        "group": "c0aa90c82d48158d",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Altura",
+        "label": "Altura actual (cm): ",
+        "format": "{{msg.payload.value}} cm",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 550,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8efe10e1cfae6048",
+        "type": "mqtt in",
+        "z": "905ab66c4289edd4",
+        "name": "PH",
+        "topic": "IoTHydroponic/ph",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9b8af3ac0e4f0d38",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 360,
+        "wires": [
+            [
+                "3ef5b24de081091a"
+            ]
+        ]
+    },
+    {
+        "id": "5ee95ce5279decdb",
+        "type": "debug",
+        "z": "905ab66c4289edd4",
+        "name": "Leer datos",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 570,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "0fa063f46bc82f32",
+        "type": "ui_text",
+        "z": "905ab66c4289edd4",
+        "group": "cae46c049fe431f4",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Temperatura Actual",
+        "label": "Temperatura actual (ºC): ",
+        "format": "{{msg.payload.value}} ºC",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 830,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "2699fbb3309a460b",
+        "type": "function",
+        "z": "905ab66c4289edd4",
+        "name": "Pasar valor",
+        "func": "msg.payload = msg.payload.value\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 40,
+        "wires": [
+            [
+                "dcdc61c51eb4edc5"
+            ]
+        ]
+    },
+    {
+        "id": "eefa27f636da6b2e",
+        "type": "ui_text",
+        "z": "905ab66c4289edd4",
+        "group": "c0aa90c82d48158d",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Ph",
+        "label": "Nivel de Ph actual: ",
+        "format": "{{msg.payload.value}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 550,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "0b0ba80ccfbf3dfc",
+        "type": "function",
+        "z": "905ab66c4289edd4",
+        "name": "Redondear valor",
+        "func": "msg.payload.value = parseFloat(msg.payload.value.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 100,
+        "wires": [
+            [
+                "0fa063f46bc82f32"
+            ]
+        ]
+    },
+    {
+        "id": "a481cc23b32bb77c",
+        "type": "mqtt in",
+        "z": "905ab66c4289edd4",
+        "name": "Ventilación",
+        "topic": "IoTHydroponic/ventilation",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9b8af3ac0e4f0d38",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 60,
+        "y": 780,
+        "wires": [
+            [
+                "fb13b5f3155e38b6"
+            ]
+        ]
+    },
+    {
+        "id": "e4333b977e5d1fb3",
+        "type": "ui_switch",
+        "z": "905ab66c4289edd4",
+        "name": "Ventilación",
+        "label": "Ventilación:",
+        "tooltip": "",
+        "group": "c0aa90c82d48158d",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "1",
+        "onvalueType": "num",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "0",
+        "offvalueType": "num",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 790,
+        "y": 780,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3ab0fc1cc195b0bc",
+        "type": "function",
+        "z": "905ab66c4289edd4",
+        "name": "Pasar valor",
+        "func": "if (msg.payload.value == 1) {\n    msg.payload = 1;\n} else {\n    msg.payload = 0;\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 570,
+        "y": 780,
+        "wires": [
+            [
+                "e4333b977e5d1fb3"
+            ]
+        ]
+    },
+    {
+        "id": "3ef5b24de081091a",
+        "type": "decode",
+        "z": "905ab66c4289edd4",
+        "name": "Decode Protobuf",
+        "protofile": "aaa9ea9f75c3b3af",
+        "protoType": "SensorValue",
+        "x": 290,
+        "y": 360,
+        "wires": [
+            [
+                "5ee95ce5279decdb",
+                "eefa27f636da6b2e"
+            ]
+        ]
+    },
+    {
+        "id": "599fdb0dca432fc4",
+        "type": "decode",
+        "z": "905ab66c4289edd4",
+        "name": "Decode Protobuf",
+        "protofile": "aaa9ea9f75c3b3af",
+        "protoType": "SensorValue",
+        "x": 290,
+        "y": 260,
+        "wires": [
+            [
+                "0c7357702bd4a819",
+                "5ee95ce5279decdb"
+            ]
+        ]
+    },
+    {
+        "id": "9ce047025a1d5360",
+        "type": "decode",
+        "z": "905ab66c4289edd4",
+        "name": "Decode Protobuf",
+        "protofile": "aaa9ea9f75c3b3af",
+        "protoType": "SensorValue",
+        "x": 290,
+        "y": 160,
+        "wires": [
+            [
+                "4aaad2e174311eb6",
+                "5ee95ce5279decdb",
+                "5b7127be67e6ed94"
+            ]
+        ]
+    },
+    {
+        "id": "355ffd65d4915395",
+        "type": "decode",
+        "z": "905ab66c4289edd4",
+        "name": "Decode Protobuf",
+        "protofile": "aaa9ea9f75c3b3af",
+        "protoType": "SensorValue",
+        "x": 290,
+        "y": 60,
+        "wires": [
+            [
+                "5ee95ce5279decdb",
+                "2699fbb3309a460b",
+                "0b0ba80ccfbf3dfc"
+            ]
+        ]
+    },
+    {
+        "id": "fb13b5f3155e38b6",
+        "type": "decode",
+        "z": "905ab66c4289edd4",
+        "name": "Decode Protobuf",
+        "protofile": "aaa9ea9f75c3b3af",
+        "protoType": "SensorValue",
+        "x": 290,
+        "y": 780,
+        "wires": [
+            [
+                "3ab0fc1cc195b0bc",
+                "b645f04a6409944a"
+            ]
+        ]
+    },
+    {
+        "id": "e3397533b5230da2",
+        "type": "function",
+        "z": "905ab66c4289edd4",
+        "name": "Gestionar lista de alertas",
+        "func": "const alertList = context.get(\"alertList\") || [];\nalertList.push(msg.payload.value);\ncontext.set(\"alertList\", alertList);\nmsg.payload = alertList;\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 580,
+        "wires": [
+            [
+                "27948fb1c1753b9d"
+            ]
+        ]
+    },
+    {
+        "id": "27948fb1c1753b9d",
+        "type": "ui_template",
+        "z": "905ab66c4289edd4",
+        "group": "dashboard_group",
+        "name": "Mostrar alertas",
+        "order": 1,
+        "width": 6,
+        "height": 6,
+        "format": "<style>\n.alert {\npadding: 15px;\nmargin-bottom: 15px;\nborder: 1px solid transparent;\nborder-radius: 4px;\nfont-family: Arial, sans-serif;\nfont-size: 16px;\n}\n\n.alert-danger {\ncolor: #721c24;\nbackground-color: #f8d7da;\nborder-color: #f5c6cb;\n}\n</style>\n\n<div ng-repeat=\"alert in msg.payload track by $index\" class=\"alert alert-danger\" role=\"alert\">\n  {{ alert }}\n</div>\n</div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 800,
+        "y": 580,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c22959552feb5e22",
+        "type": "mqtt in",
+        "z": "905ab66c4289edd4",
+        "name": "Alertas",
+        "topic": "IoTHydroponic/alert",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9b8af3ac0e4f0d38",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 580,
+        "wires": [
+            [
+                "7afaac7c3cdb3b2c"
+            ]
+        ]
+    },
+    {
+        "id": "7afaac7c3cdb3b2c",
+        "type": "decode",
+        "z": "905ab66c4289edd4",
+        "name": "Decode Protobuf",
+        "protofile": "6d6cf12effc81bc1",
+        "protoType": "AlertValue",
+        "x": 290,
+        "y": 580,
+        "wires": [
+            [
+                "e3397533b5230da2",
+                "b645f04a6409944a"
+            ]
+        ]
+    },
+    {
+        "id": "8e27d2872d4e6e71",
+        "type": "ui_chart",
+        "z": "905ab66c4289edd4",
+        "name": "Historial Temperatura",
+        "group": "d142bcd28ba111d5",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Historial",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Sin datos",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 880,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5b7127be67e6ed94",
+        "type": "function",
+        "z": "905ab66c4289edd4",
+        "name": "Pasar valor",
+        "func": "msg.payload = msg.payload.value\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 650,
+        "y": 200,
+        "wires": [
+            [
+                "8e27d2872d4e6e71"
+            ]
+        ]
+    },
+    {
+        "id": "fc83a3d679a083b9",
+        "type": "mqtt in",
+        "z": "905ab66c4289edd4",
+        "name": "Servomotor",
+        "topic": "IoTHydroponic/servo",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9b8af3ac0e4f0d38",
+        "nl": false,
+        "rap": false,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 840,
+        "wires": [
+            [
+                "ffc53a90960e3057"
+            ]
+        ]
+    },
+    {
+        "id": "6102ed55048dc3d9",
+        "type": "ui_text",
+        "z": "905ab66c4289edd4",
+        "group": "c0aa90c82d48158d",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "Posición servomotor",
+        "label": "Posición actual servomotor: ",
+        "format": "{{msg.payload.value}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 580,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "ffc53a90960e3057",
+        "type": "decode",
+        "z": "905ab66c4289edd4",
+        "name": "Decode Protobuf",
+        "protofile": "aaa9ea9f75c3b3af",
+        "protoType": "SensorValue",
+        "x": 290,
+        "y": 840,
+        "wires": [
+            [
+                "6102ed55048dc3d9",
+                "b645f04a6409944a"
+            ]
+        ]
+    },
+    {
+        "id": "b645f04a6409944a",
+        "type": "debug",
+        "z": "905ab66c4289edd4",
+        "name": "Debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 510,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "097ec60d7713a785",
+        "type": "mqtt in",
+        "z": "905ab66c4289edd4",
+        "name": "Luz",
+        "topic": "IoTHydroponic/light",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "9b8af3ac0e4f0d38",
+        "nl": false,
+        "rap": false,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 480,
+        "wires": [
+            [
+                "4392018cb0a151cb"
+            ]
+        ]
+    },
+    {
+        "id": "fbab74c03c3d398c",
+        "type": "ui_text",
+        "z": "905ab66c4289edd4",
+        "group": "c0aa90c82d48158d",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "Luz solar",
+        "label": "Luz solar actual: ",
+        "format": "{{msg.payload.value}} lux",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 720,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "4392018cb0a151cb",
+        "type": "decode",
+        "z": "905ab66c4289edd4",
+        "name": "Decode Protobuf",
+        "protofile": "aaa9ea9f75c3b3af",
+        "protoType": "SensorValue",
+        "x": 290,
+        "y": 480,
+        "wires": [
+            [
+                "5ee95ce5279decdb",
+                "7f4e4a41f08f0ba1"
+            ]
+        ]
+    },
+    {
+        "id": "7f4e4a41f08f0ba1",
+        "type": "function",
+        "z": "905ab66c4289edd4",
+        "name": "Redondear valor",
+        "func": "msg.payload.value = parseFloat(msg.payload.value.toFixed(2));\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 530,
+        "y": 480,
+        "wires": [
+            [
+                "fbab74c03c3d398c"
+            ]
+        ]
     }
 ]

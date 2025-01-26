@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+import "nanopb.proto"; // Importa las opciones de Nanopb
+
+message SensorValue {
+  string name = 1 [(nanopb).max_length = 64]; // Longitud máxima de 64 caracteres
+  float value = 2; // Valor del sensor
+}
+
